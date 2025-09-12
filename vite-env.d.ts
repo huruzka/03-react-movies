@@ -1,3 +1,0 @@
-/// <reference types="vite/client" />
-VITE_MY_API=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZGY2YjE3YzE2NTg3ODI4YTVkNzZmZmRiMzY4YjUzYyIsIm5iZiI6MTc1NzU4Nzk4NC4zMjksInN1YiI6IjY4YzJhYTEwOWRiZDg0NThhMjhkMGEzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.USX8ecqV0UdJvD2aYKi_K9aHDIuzhukFYUwYYxSQZh4
-
