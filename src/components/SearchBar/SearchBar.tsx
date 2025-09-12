@@ -9,8 +9,9 @@ interface Props {
 function SearchBar({ onSubmit }: Props) {
   const [query, setQuery] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (formData:FormData) => {
+    const search = formData.get("search") as string;
+    console.log("search", search);
 
     if (query.trim() === "") {
       toast.error("Please enter your search query.");
@@ -24,10 +25,11 @@ function SearchBar({ onSubmit }: Props) {
   return (
     <header className={styles.header}>
       <Toaster />
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form className={styles.form} action={handleSubmit}>
         <input
           className={styles.input}
           type="text"
+          name="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search movies..."
