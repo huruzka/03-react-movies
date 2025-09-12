@@ -1,5 +1,4 @@
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
 import styles from "./SearchBar.module.css";
 
 interface Props {
@@ -12,19 +11,12 @@ function SearchBar({ onSubmit }: Props) {
   const handleSubmit = (formData:FormData) => {
     const search = formData.get("search") as string;
     console.log("search", search);
-
-    if (query.trim() === "") {
-      toast.error("Please enter your search query.");
-      return;
-    }
-
     onSubmit(query); 
     setQuery("");
   };
 
   return (
     <header className={styles.header}>
-      <Toaster />
       <form className={styles.form} action={handleSubmit}>
         <input
           className={styles.input}
