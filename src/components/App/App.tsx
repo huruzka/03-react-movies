@@ -1,12 +1,12 @@
 import SearchBar from '../SearchBar/SearchBar';
 import './App.module.css';
-import MovieGrid from '../Movie Grid/MovieGrid';
+import MovieGrid from '../MovieGrid/MovieGrid';
 import type { Movie } from '../../types/movie';
 import { useState } from "react";
 import { fetchMovies } from '../../services/movieService';
 import Loader from '../Loader/Loader';
-import ErrorMessage from '../Error Message/ErrorMessage';
-import MovieModal from '../Movie Modal/MovieModal';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import MovieModal from '../MovieModal/MovieModal';
 
 function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
