@@ -24,22 +24,18 @@ function App() {
     setSelectedMovie(null);
   };
 
-const handleSearch = async (searchQuery: string) => {
-  if (searchQuery.trim() === "") {
-    toast.error("Please enter your search query.");
-    return; 
-  }
-
-  try {
+const handleSearch = async (query: string): Promise<void>=> {
+    try {
     setError(false);
     setLoader(true);
-    const results = await fetchMovies(searchQuery);
+    const results = await fetchMovies(query);
     if (results.length === 0) {
-      toast("No movies found for your request.");
+      toast.error("No movies found for your request.");
     }
-    setMovies(results);
+      setMovies(results);
   } catch { 
-    setError(true);
+      setError(true);
+      toast.error("There was an error, please try again...")
   } finally {
     setLoader(false);
   }
